@@ -1,0 +1,56 @@
+2026-10-05 07:35:50,953 INFO module_05_ppe.train: Hardware: {'accelerator': 'cpu', 'device_name': 'cpu', 'vram_gb': 0.0, 'cpu_count': 1, 'ram_gb': 3.9, 'torch': 'not installed'}
+2026-10-05 07:35:50,953 INFO module_05_ppe.train: Device=cpu batch=4 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-05 07:35:50,954 WARNING module_05_ppe.train: No GPU detected: CPU training will be extremely slow. Use a GPU machine for real training.
+2026-10-05 07:35:50,955 WARNING module_05_ppe.train: dataset: test: image folder missing: /home/claude/Nexora/module_05_ppe/datasets/processed/test/images
+2026-10-05 07:35:50,955 WARNING module_05_ppe.train: dataset: No session ids ('<session>__file') in file names: cannot verify camera/session separation between splits.
+2026-10-05 07:35:50,955 WARNING module_05_ppe.train: dataset: No test images: a held-out test metric cannot be produced.
+2026-10-05 07:35:50,956 ERROR module_05_ppe.train: dataset: train: image folder missing: /home/claude/Nexora/module_05_ppe/datasets/processed/train/images
+2026-10-05 07:35:50,956 ERROR module_05_ppe.train: dataset: val: image folder missing: /home/claude/Nexora/module_05_ppe/datasets/processed/val/images
+2026-10-05 07:35:50,956 ERROR module_05_ppe.train: Dataset validation failed; training NOT started.
+2026-10-05 19:41:12,849 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-05 19:41:12,849 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-05 19:41:12,851 WARNING module_05_ppe.train: dataset: test: image folder missing: /Users/dhumal/Documents/Nexora/module_05_ppe/datasets/processed/test/images
+2026-10-05 19:41:12,851 WARNING module_05_ppe.train: dataset: No session ids ('<session>__file') in file names: cannot verify camera/session separation between splits.
+2026-10-05 19:41:12,851 WARNING module_05_ppe.train: dataset: No test images: a held-out test metric cannot be produced.
+2026-10-05 19:41:12,851 ERROR module_05_ppe.train: dataset: train: image folder missing: /Users/dhumal/Documents/Nexora/module_05_ppe/datasets/processed/train/images
+2026-10-05 19:41:12,851 ERROR module_05_ppe.train: dataset: val: image folder missing: /Users/dhumal/Documents/Nexora/module_05_ppe/datasets/processed/val/images
+2026-10-05 19:41:12,852 ERROR module_05_ppe.train: Dataset validation failed; training NOT started.
+2026-10-05 20:10:20,363 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-05 20:10:20,363 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-05 20:10:20,453 INFO module_05_ppe.train: Dry run OK: configuration, dataset and hardware look usable.
+2026-10-05 20:11:54,520 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-05 20:11:54,521 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-05 20:12:02,478 INFO module_05_ppe.train: Training run 'ppe_v1' (batch=8, epochs=100, weights=yolo11s.pt)
+2026-10-05 20:13:50,146 ERROR module_05_ppe.train: Training failed: Dataset '/Users/dhumal/Documents/Nexora/module_05_ppe/datasets/data.yaml' error ❌ Dataset '/Users/dhumal/Documents/Nexora/module_05_ppe/datasets/data.yaml' images not found, missing path '/Users/dhumal/Documents/Nexora/processed/val/images'
+Note dataset download directory is '/Users/dhumal/datasets'. You can update this in '/Users/dhumal/Library/Application Support/Ultralytics/settings.json'
+Traceback (most recent call last):
+  File "/Users/dhumal/Documents/Nexora/.venv/lib/python3.9/site-packages/ultralytics/engine/trainer.py", line 858, in get_dataset
+    data = check_det_dataset(self.args.data, split=self.args.split)
+  File "/Users/dhumal/Documents/Nexora/.venv/lib/python3.9/site-packages/ultralytics/data/utils.py", line 796, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError: Dataset '/Users/dhumal/Documents/Nexora/module_05_ppe/datasets/data.yaml' images not found, missing path '/Users/dhumal/Documents/Nexora/processed/val/images'
+Note dataset download directory is '/Users/dhumal/datasets'. You can update this in '/Users/dhumal/Library/Application Support/Ultralytics/settings.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dhumal/Documents/Nexora/module_05_ppe/training/train.py", line 217, in run_training
+    YOLO(str(start_weights)).train(name=current_name, batch=current_batch, epochs=current_epochs, **common)
+  File "/Users/dhumal/Documents/Nexora/.venv/lib/python3.9/site-packages/ultralytics/engine/model.py", line 884, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+  File "/Users/dhumal/Documents/Nexora/.venv/lib/python3.9/site-packages/ultralytics/models/yolo/detect/train.py", line 62, in __init__
+    super().__init__(cfg, overrides, _callbacks)
+  File "/Users/dhumal/Documents/Nexora/.venv/lib/python3.9/site-packages/ultralytics/engine/trainer.py", line 202, in __init__
+    self.data = self.get_dataset()
+  File "/Users/dhumal/Documents/Nexora/.venv/lib/python3.9/site-packages/ultralytics/engine/trainer.py", line 862, in get_dataset
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset '/Users/dhumal/Documents/Nexora/module_05_ppe/datasets/data.yaml' error ❌ Dataset '/Users/dhumal/Documents/Nexora/module_05_ppe/datasets/data.yaml' images not found, missing path '/Users/dhumal/Documents/Nexora/processed/val/images'
+Note dataset download directory is '/Users/dhumal/datasets'. You can update this in '/Users/dhumal/Library/Application Support/Ultralytics/settings.json'
+2026-10-05 20:13:50,149 ERROR module_05_ppe.train: Diagnosis: A dataset or weights path is wrong. Check training.data in config.yaml and datasets/README.md.
+2026-10-05 20:16:41,546 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-05 20:16:41,546 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-05 20:16:41,699 INFO module_05_ppe.train: Dry run OK: configuration, dataset and hardware look usable.
+2026-10-05 20:17:14,102 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-05 20:17:14,102 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-05 20:17:14,328 INFO module_05_ppe.train: Training run 'ppe_v1' (batch=8, epochs=100, weights=yolo11s.pt)
+2026-10-05 20:56:57,378 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.

@@ -1,0 +1,10 @@
+# YOLO dataset file for Module 05. The `processed/` folder does NOT exist yet:
+# build it with  python module_05_ppe/training/prepare_dataset.py  (see datasets/README.md)
+path: /Users/dhumal/Documents/Nexora/module_05_ppe/datasets
+train: processed/train/images
+val: processed/val/images
+test: processed/test/images
+names:
+  0: person
+  1: helmet
+  2: safety_vest

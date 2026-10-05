@@ -1,0 +1,105 @@
+# NEXORA Module 05 - PPE & Workplace Safety Monitoring
+# Every threshold lives here (spec: "do not hard-code thresholds").
+# Values marked PROVISIONAL are engineering defaults, NOT tuned on validation
+# data (no model has been trained yet). Re-tune them after running
+# training/validate.py and evaluation/evaluate.py on real data.
+# Relative paths are resolved against the module_05_ppe/ folder.
+
+module:
+  id: module_05_ppe
+  name: PPE & Workplace Safety Monitoring
+  version: 1.0.0
+
+classes:
+  # Order = class ids in the training dataset (datasets/data.yaml).
+  names: [person, helmet, safety_vest]
+
+model:
+  path: models/checkpoints/best.pt
+  base_weights: yolo11s.pt          # pretrained starting point for training
+  input_size: 640
+  confidence_threshold: 0.50        # PROVISIONAL default for any class
+  class_confidence:                 # PROVISIONAL per-class overrides
+    person: 0.40
+    helmet: 0.45
+    safety_vest: 0.15
+  iou_threshold: 0.50
+  device: auto                      # auto | cpu | mps | 0 (cuda index)
+  min_box_area_px: 64               # drop boxes smaller than ~8x8 px (noise)
+
+tracking:
+  enabled: true
+  tracker: bytetrack
+  tracker_config: config/bytetrack_ppe.yaml
+  max_age: 30                       # keep in sync with track_buffer in the tracker yaml
+
+association:                        # PROVISIONAL geometry (fractions of person box)
+  head_height_frac: 0.30            # head region = top 30% of the person box ...
+  head_width_frac: 0.70             # ... central 70% of its width ...
+  head_up_margin: 0.10              # ... plus 10% above (helmets stick out above the box)
+  torso_top_frac: 0.15              # torso region = 15%..65% of person height
+  torso_bottom_frac: 0.65
+  torso_side_margin: 0.10
+  helmet_min_overlap: 0.50          # fraction of helmet box that must lie inside head region
+  helmet_min_score: 0.50
+  helmet_max_rel_height: 0.40       # helmet taller than 40% of person => implausible
+  vest_min_inside_person: 0.60      # fraction of vest box inside the person box
+  vest_min_overlap: 0.50            # fraction of vest box inside torso region
+  vest_min_score: 0.15
+  min_person_height_px: 60          # smaller persons => compliance UNKNOWN (cannot judge)
+  occlusion_overlap: 0.50           # region covered by a nearer worker => UNKNOWN
+  front_margin_frac: 0.05
+  frame_edge_margin_px: 2           # person touching frame top => head may be cut off
+
+event:                              # PROVISIONAL temporal rules
+  minimum_frames: 15                # violating frames needed ...
+  minimum_seconds: 1.0              # ... AND at least this much video time
+  recovery_frames: 5                # compliant frames needed to end an episode
+  cooldown_seconds: 10              # no new event for the same track inside this window
+  track_max_age_frames: 30          # forget a track unseen for this many frames
+
+severity:                           # reasoning documented in README section 14
+  helmet_missing: HIGH
+  safety_vest_missing: MEDIUM
+  both_missing: CRITICAL
+
+evidence:
+  save_frame: true
+  save_clip: true
+  pre_event_seconds: 5
+  post_event_seconds: 5
+  clip_max_width: 960
+  jpeg_quality: 90
+  folder: evidence
+
+output:
+  format: json
+  directory: outputs                # a per-run folder is created below this
+  write_detections_file: true       # detections.jsonl (one JSON object per line)
+
+ppe_requirements:
+  helmet_required: true
+  safety_vest_required: true
+  gloves_required: false            # class not supported yet (ignored)
+  safety_shoes_required: false      # class not supported yet (ignored)
+
+training:
+  data: datasets/data.yaml
+  model: yolo11s.pt
+  epochs: 100
+  imgsz: 640
+  batch: auto                       # auto = chosen from detected hardware
+  workers: 4
+  seed: 0
+  patience: 30
+  optimizer: auto
+  augmentation_preset: cctv         # see training/augmentations.py
+  project_dir: models/training_runs
+  run_name: ppe_v1
+  max_retries: 2
+  cache: false
+
+evaluation:
+  split: test
+  speed_sample_frames: 200
+  event_match_tolerance_s: 3.0

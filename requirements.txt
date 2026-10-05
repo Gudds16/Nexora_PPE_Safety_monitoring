@@ -1,0 +1,10 @@
+# Version ranges, not exact pins: this build environment had no internet, so exact
+# versions could not be verified. After installing, run `pip freeze > requirements.lock.txt`
+# and commit that file for reproducibility.  Python 3.9 - 3.12 expected.
+ultralytics>=8.3.0,<9     # YOLO11 + ByteTrack (training and inference)
+torch>=2.2                # pulled in by ultralytics; install the CUDA build for an NVIDIA GPU
+opencv-python>=4.8
+numpy>=1.24
+PyYAML>=6.0
+psutil>=5.9               # optional: CPU/RAM metrics in evaluation
+pytest>=7.4

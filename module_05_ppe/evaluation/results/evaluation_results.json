@@ -1,0 +1,333 @@
+{
+  "generated_utc": "2026-10-05T07:38:33+00:00",
+  "hardware": {
+    "accelerator": "cpu",
+    "device_name": "cpu",
+    "vram_gb": 0.0,
+    "cpu_count": 1,
+    "ram_gb": 3.9,
+    "torch": "not installed"
+  },
+  "sections": {
+    "association_scenarios": {
+      "status": "measured",
+      "note": "hand-written geometry, checks logic only - not model accuracy",
+      "passed": 14,
+      "total": 14,
+      "scenarios": [
+        {
+          "scenario": "fully_compliant",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "no_helmet",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "no_vest",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "NO"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "NO"
+            }
+          }
+        },
+        {
+          "scenario": "helmet_in_hand",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "helmet_on_table",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "helmet_lying_nearby",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "vest_held_not_worn",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "NO"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "NO"
+            }
+          }
+        },
+        {
+          "scenario": "two_workers_helmet_between_on_ground",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "two_workers_only_one_helmet",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "two_workers_overlapping_one_helmet",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "occluded_worker_unknown",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "UNKNOWN",
+              "safety_vest": "UNKNOWN"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "UNKNOWN",
+              "safety_vest": "UNKNOWN"
+            }
+          }
+        },
+        {
+          "scenario": "head_cut_off_by_frame",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "UNKNOWN",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "UNKNOWN",
+              "safety_vest": "YES"
+            }
+          }
+        },
+        {
+          "scenario": "person_too_small",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "UNKNOWN",
+              "safety_vest": "UNKNOWN"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "UNKNOWN",
+              "safety_vest": "UNKNOWN"
+            }
+          }
+        },
+        {
+          "scenario": "crowd_of_six_alternating_helmets",
+          "passed": true,
+          "expected": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "3": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "4": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "5": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "6": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          },
+          "got": {
+            "1": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "2": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "3": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "4": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            },
+            "5": {
+              "helmet": "YES",
+              "safety_vest": "YES"
+            },
+            "6": {
+              "helmet": "NO",
+              "safety_vest": "YES"
+            }
+          }
+        }
+      ]
+    },
+    "detection_metrics": {
+      "status": "Not measured",
+      "reason": "no trained weights"
+    },
+    "difficult_conditions": {
+      "status": "Not measured",
+      "reason": "no trained weights"
+    },
+    "speed": {
+      "status": "Not measured",
+      "reason": "needs trained weights, ultralytics and --video <file>"
+    },
+    "event_level": {
+      "status": "Not measured",
+      "reason": "needs --gt-events (ground-truth events) and --results (pipeline outputs)"
+    }
+  }
+}

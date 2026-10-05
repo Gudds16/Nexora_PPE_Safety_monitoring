@@ -1,0 +1,153 @@
+{
+  "module": "module_05_ppe",
+  "module_version": "1.0.0",
+  "camera_id": "CAM-DEMO",
+  "source": "/Users/dhumal/Documents/Nexora/module_05_ppe/evaluation/results/synthetic_demo/demo.mp4",
+  "start_time": "2026-10-02T14:30:00.000Z",
+  "frames_processed": 120,
+  "video_fps": 10.0,
+  "frame_size": [
+    640,
+    480
+  ],
+  "events": [
+    {
+      "event_id": "EVT-000001",
+      "module": "module_05_ppe",
+      "event_type": "PPE_VIOLATION",
+      "camera_id": "CAM-DEMO",
+      "track_id": 2,
+      "timestamp": "2026-10-02T14:30:01.400Z",
+      "confidence": 0.9,
+      "severity": "HIGH",
+      "status": "PENDING",
+      "rule": {
+        "name": "persistent_missing_ppe",
+        "minimum_frames": 15,
+        "minimum_seconds": 1.0,
+        "cooldown_seconds": 10.0
+      },
+      "missing_ppe": [
+        "helmet"
+      ],
+      "frame_id": 14,
+      "first_violation_frame_id": 0,
+      "video_time_s": 1.4,
+      "bbox": {
+        "x1": 215,
+        "y1": 120,
+        "x2": 305,
+        "y2": 390
+      }
+    },
+    {
+      "event_id": "EVT-000002",
+      "module": "module_05_ppe",
+      "event_type": "PPE_VIOLATION",
+      "camera_id": "CAM-DEMO",
+      "track_id": 3,
+      "timestamp": "2026-10-02T14:30:04.400Z",
+      "confidence": 0.9,
+      "severity": "HIGH",
+      "status": "PENDING",
+      "rule": {
+        "name": "persistent_missing_ppe",
+        "minimum_frames": 15,
+        "minimum_seconds": 1.0,
+        "cooldown_seconds": 10.0
+      },
+      "missing_ppe": [
+        "helmet"
+      ],
+      "frame_id": 44,
+      "first_violation_frame_id": 30,
+      "video_time_s": 4.4,
+      "bbox": {
+        "x1": 395,
+        "y1": 120,
+        "x2": 485,
+        "y2": 390
+      }
+    }
+  ],
+  "incidents": [
+    {
+      "incident_id": "INC-000001",
+      "module": "module_05_ppe",
+      "title": "PPE Violation",
+      "event_type": "PPE_VIOLATION",
+      "camera_id": "CAM-DEMO",
+      "timestamp": "2026-10-02T14:30:01.400Z",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "status": "PENDING",
+      "description": "Potential PPE non-compliance: helmet not detected on worker track 2. Human review required.",
+      "event_id": "EVT-000001",
+      "track_id": 2,
+      "evidence": {
+        "frame": "evidence/INC-000001/frame.jpg",
+        "annotated_frame": "evidence/INC-000001/annotated_frame.jpg",
+        "clip": "evidence/INC-000001/clip.mp4"
+      },
+      "review": {
+        "decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "incident_id": "INC-000002",
+      "module": "module_05_ppe",
+      "title": "PPE Violation",
+      "event_type": "PPE_VIOLATION",
+      "camera_id": "CAM-DEMO",
+      "timestamp": "2026-10-02T14:30:04.400Z",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "status": "PENDING",
+      "description": "Potential PPE non-compliance: helmet not detected on worker track 3. Human review required.",
+      "event_id": "EVT-000002",
+      "track_id": 3,
+      "evidence": {
+        "frame": "evidence/INC-000002/frame.jpg",
+        "annotated_frame": "evidence/INC-000002/annotated_frame.jpg",
+        "clip": "evidence/INC-000002/clip.mp4"
+      },
+      "review": {
+        "decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null
+      }
+    }
+  ],
+  "workers": {
+    "1": {
+      "frames_seen": 120,
+      "frames_helmet_no": 0,
+      "frames_vest_no": 0,
+      "frames_compliant": 120
+    },
+    "2": {
+      "frames_seen": 120,
+      "frames_helmet_no": 120,
+      "frames_vest_no": 0,
+      "frames_compliant": 0
+    },
+    "3": {
+      "frames_seen": 90,
+      "frames_helmet_no": 90,
+      "frames_vest_no": 0,
+      "frames_compliant": 0
+    }
+  },
+  "processing": {
+    "wall_seconds": 0.282,
+    "end_to_end_fps": 425.77,
+    "mean_detector_ms": 0.02
+  },
+  "files": {
+    "output_dir": "/Users/dhumal/Documents/Nexora/module_05_ppe/evaluation/results/synthetic_demo",
+    "detections": "detections.jsonl",
+    "annotated_video": "annotated_demo.mp4"
+  }
+}
