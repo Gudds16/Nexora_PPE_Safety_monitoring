@@ -1,0 +1,47 @@
+{
+  "precision": 0.8479500762659034,
+  "recall": 0.7046869854253871,
+  "f1": 0.7697090295965828,
+  "mAP50": 0.8071942121557969,
+  "mAP50-95": 0.4136501954373391,
+  "per_class": [
+    {
+      "class": "person",
+      "precision": 0.790984051316445,
+      "recall": 0.7146892655367232,
+      "f1": 0.7509036712798971,
+      "mAP50": 0.7881921793047831,
+      "mAP50-95": 0.4030518914834892
+    },
+    {
+      "class": "helmet",
+      "precision": 0.9564310729921077,
+      "recall": 0.6938922386846433,
+      "f1": 0.8042788872827124,
+      "mAP50": 0.8461989977734472,
+      "mAP50-95": 0.4090044724556782
+    },
+    {
+      "class": "safety_vest",
+      "precision": 0.7964351044891572,
+      "recall": 0.7054794520547946,
+      "f1": 0.7482031499916038,
+      "mAP50": 0.7871914593891602,
+      "mAP50-95": 0.4288942223728499
+    }
+  ],
+  "split": "val",
+  "images": 170,
+  "weights": "/Users/dhumal/Documents/Nexora/module_05_ppe/models/checkpoints/best.pt",
+  "data": "/Users/dhumal/Documents/Nexora/module_05_ppe/datasets/data.yaml",
+  "conf": 0.001,
+  "hardware": {
+    "accelerator": "mps",
+    "device_name": "Apple Silicon (MPS)",
+    "vram_gb": 0.0,
+    "cpu_count": 8,
+    "ram_gb": 16.0,
+    "torch": "2.8.0"
+  },
+  "measured_utc": "2026-10-06T06:50:34+00:00"
+}

@@ -54,3 +54,31 @@ Note dataset download directory is '/Users/dhumal/datasets'. You can update this
 2026-10-05 20:17:14,102 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
 2026-10-05 20:17:14,328 INFO module_05_ppe.train: Training run 'ppe_v1' (batch=8, epochs=100, weights=yolo11s.pt)
 2026-10-05 20:56:57,378 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.
+2026-10-06 11:15:40,489 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-06 11:15:40,490 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-06 11:15:40,879 INFO module_05_ppe.train: Resuming from /Users/dhumal/Documents/Nexora/module_05_ppe/models/training_runs/ppe_v1/weights/last.pt
+2026-10-06 11:28:21,844 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.
+2026-10-06 11:28:43,285 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-06 11:28:43,285 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-06 11:28:44,896 INFO module_05_ppe.train: Resuming from /Users/dhumal/Documents/Nexora/module_05_ppe/models/training_runs/ppe_v1/weights/last.pt
+2026-10-06 11:29:14,690 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.
+2026-10-06 11:29:14,754 INFO module_05_ppe.train: Kept existing best.pt (fitness 0.37715 >= new 0.37715)
+2026-10-06 11:29:18,097 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-06 11:29:18,097 INFO module_05_ppe.train: Device=mps batch=16 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-06 11:29:18,253 INFO module_05_ppe.train: Resuming from /Users/dhumal/Documents/Nexora/module_05_ppe/models/training_runs/ppe_v1/weights/last.pt
+2026-10-06 11:29:38,704 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.
+2026-10-06 11:29:38,763 INFO module_05_ppe.train: Kept existing best.pt (fitness 0.37715 >= new 0.37715)
+2026-10-06 11:29:42,486 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-06 11:29:42,486 INFO module_05_ppe.train: Device=mps batch=32 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-06 11:29:42,640 INFO module_05_ppe.train: Resuming from /Users/dhumal/Documents/Nexora/module_05_ppe/models/training_runs/ppe_v1/weights/last.pt
+2026-10-06 11:30:34,490 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.
+2026-10-06 11:30:34,552 INFO module_05_ppe.train: Kept existing best.pt (fitness 0.37715 >= new 0.37715)
+2026-10-06 11:30:37,990 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-06 11:30:37,991 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-06 11:30:38,144 INFO module_05_ppe.train: Resuming from /Users/dhumal/Documents/Nexora/module_05_ppe/models/training_runs/ppe_v1/weights/last.pt
+2026-10-06 11:30:46,992 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.
+2026-10-06 11:30:47,053 INFO module_05_ppe.train: Kept existing best.pt (fitness 0.37715 >= new 0.37715)
+2026-10-06 11:31:25,961 INFO module_05_ppe.train: Hardware: {'accelerator': 'mps', 'device_name': 'Apple Silicon (MPS)', 'vram_gb': 0.0, 'cpu_count': 8, 'ram_gb': 16.0, 'torch': '2.8.0'}
+2026-10-06 11:31:25,961 INFO module_05_ppe.train: Device=mps batch=8 imgsz=640 epochs=100 model=yolo11s.pt
+2026-10-06 11:31:26,113 INFO module_05_ppe.train: Resuming from /Users/dhumal/Documents/Nexora/module_05_ppe/models/training_runs/ppe_v1/weights/last.pt
+2026-10-06 12:16:55,347 WARNING module_05_ppe.train: Interrupted. Re-run with --resume to continue from last.pt.
